@@ -18,7 +18,6 @@
   <ul class="cards">
     <li
         class="card"
-        ng-controller="woofCardCtrl"
         ng-repeat="woof in woofs | filter:woofFilters[woofFilter] | orderBy:'-'">
       <div class="card__left">
         <div class="card__text">{{woof.body}}</div>
@@ -34,7 +33,7 @@
         <div
             class="card__star"
             ng-class="{'card__star--active': woof.starred}"
-            ng-click="toggleStar()" />
+            ng-click="woof.toggleStar()" />
       </div>
     </li>
   </ul>

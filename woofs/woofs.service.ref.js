@@ -1,42 +1,29 @@
-angular.module('woof').service('Woofs', function ($q) {
+angular.module('woof').service('Woofs', function ($q, Woof) {
   var woofs = [
-    {
+    new Woof({
       body: 'OMG',
       starred: true,
       starCount: 5
-    },
-    {
+    }),
+    new Woof({
       body: 'My breakfast was \u{1F4AF}',
       starred: true,
       starCount: 1
-    },
-    {
+    }),
+    new Woof({
       body: 'I just got a soda.',
       starred: false,
       starCount: 0
-    }
+    })
   ];
 
   this.fetch = function () {
     return $q.when(woofs);
   };
 
-  this.toggleStar = function (woof) {
-    var isPreviouslyStarred = woof.starred;
-    woof.starred = !isPreviouslyStarred;
-
-    if (isPreviouslyStarred) {
-      woof.starCount = woof.starCount - 1;
-    } else {
-      woof.starCount = woof.starCount + 1;
-    }
-  };
-
   this.create = function (woofText) {
-    woofs.push({
-      body: woofText,
-      starred: false,
-      starCount: 0
-    });
+    woofs.push(new Woof({
+      body: woofText
+    }));
   };
 });
