@@ -1,4 +1,4 @@
-var woof = angular.module('woof', ['ui.router']);
+var woof = angular.module('woof', ['ui.router', 'LocalStorageModule']);
 
 woof.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
