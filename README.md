@@ -3,6 +3,9 @@
 This app is a simple Twitter clone named Woof where users can create and view posts.
 Here we will showcase using some of Angular's built-in services, form validation, event handlers, and even a popular routing library, Angular UI Router.
 
+# Completed app
+You can find the completed app for reference in the `completed` branch.
+
 ## Setup
 
 ### Prerequisites
